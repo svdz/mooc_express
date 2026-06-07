@@ -1,9 +1,8 @@
 services:
   web-server:
-    build: .
+    image: svdz/mooc_express
     ports:
       - 8080:8080
-    container_name: express_app
 
   watchtower: 
     image: nickfedor/watchtower
@@ -11,4 +10,3 @@ services:
       -  WATCHTOWER_POLL_INTERVAL=60
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    container_name: watchtower
